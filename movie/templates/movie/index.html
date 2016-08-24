@@ -1,0 +1,22 @@
+{% extends 'movie/base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block body %}
+    <h4 style="margin-left:10px;"><a href="{% url 'movie:add' %}">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new movie
+    </a></h4>
+    <div class="movieList">
+        {% for movie in all_movies %}
+            <div class="movieElement">
+                <a href="{% url 'movie:detail' movie.id %}">
+                <img src="{{ movie.poster.url }}" class="poster">
+                <div class="caption">
+                <h3>{{ movie.original_title }}</h3>
+                <p>({{ movie.seen_for_the_first_time }})</p>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ketrathi</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=David+Libre|Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="col-md-8 col-md-offset-2 registration">
+        <div class="jumbotron row">
+            <a class="small" href="{% url 'home:home' %}">Send me back to the home page</a>
+            <h1> Create a Free Account </h1>
+
+            {% if error_message %}
+            <!-- password mismatch error message -->
+            <p><strong>{{ error_message }}</strong></p>
+            {% endif %}
+
+            <form action="" method="post" enctype="multipart/form-data">
+                {% if form.non_field_errors %}
+                <div class="error-list-block">
+                    <p>Please correct the errors below.</p>
+                    <ul>
+                        {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% csrf_token %}
+                {% for field in form %}
+                {{ field.label_tag }}
+                <div>{{ field }}</div>
+                {% if field.errors %}
+                {% for error in field.errors %}
+                <p><strong>{{ error|striptags }}</strong></p>
+                {% endfor %}
+                {% endif %}
+                {% endfor %}
+                <div style="padding-top:10px;">
+                    <button class="btn btn-primary" type="submit">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

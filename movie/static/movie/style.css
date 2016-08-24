@@ -1,0 +1,70 @@
+html {
+    height:100%;
+}
+
+body {
+    background-color:#f7f7f7;
+    background: white url("images/background.png");
+    height:100% !important;
+    min-height:100%;
+    position:relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mainpage {
+    max-width: 874px;
+    margin-top: 0;
+    font-family: 'David Libre', serif;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movieList {
+    height: 100%;
+    overflow-y: sroll;
+    margin-left: 13px;
+    background-color: white;
+}
+
+.movieElement {
+    height: 400px;
+    width: 200px;
+    display: inline;
+    border: 1px solid #ddd;
+    float: left;
+    margin: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+.movieElement:hover {
+    background-color: #EEF4ED;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.poster {
+    width: 182px;
+    height: 268px;
+    border-radius: 10px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+}
+
+.navbar-brand:hover {
+    font-weight: bold;
+}
+
+.brandName {
+    font-family: 'Orbitron', sans-serif;
+}

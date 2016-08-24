@@ -1,0 +1,41 @@
+html {
+    height:100%;
+    font-family: 'David Libre', serif;
+}
+
+body {
+    background-color:rgb(192,216,224);
+    background: white url("images/background.png");
+    height:100% !important;
+    min-height:100%;
+    position:relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.jumbotron {
+    margin-top: 15%;
+    border-radius: 10px;
+}
+
+.mainpage {
+    max-width: 900px;
+    margin-top: 0;
+    font-family: 'David Libre', serif;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.brandName {
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(93,87,107)
+}
+
+.registration {
+    text-align: center;
+}
+
+

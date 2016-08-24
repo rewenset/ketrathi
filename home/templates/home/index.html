@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ketrathi</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=David+Libre|Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="mainpage">
+        <div class="jumbotron row">
+            <div class="col-md-8 brandName">
+                <h1 class="brandName">KETRATHI</h1>
+                <h4 class="brandName">start to track</h4>
+            </div>
+            <div class="col-md-4">
+                {% if user.is_authenticated %}
+                    <h2>Hi, {{ user.username }}</h2>
+                    <div class="chooser row">
+                        <div class="chooserElement col-md-6">
+                            <h3>
+                                <a href="{% url 'movie:index' %}">
+                                    <span class="glyphicon glyphicon-film" aria-hidden="true"></span> Movies
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="chooserElement col-md-6">
+                            <h3>
+                                <a href="{% url 'book:index' %}">
+                                    <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Books
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="{% url 'home:signout' %}">Sign Out</a>
+                {% else %}
+                {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                {% endif %}
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            <label for="emailAddr"> {{ field.label_tag }}</label>
+                            <div id="emailAddr">{{ field }}</div>
+                        </div>
+
+                    {% endfor %}
+                    <div>
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                </form>
+                <div>
+                    <br>
+                    <a href="{% url 'home:registration' %}">or Sign Up</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
