@@ -5,4 +5,4 @@ I'm still working on books section.
 In the future maybe will be more sections.
 ![](http://i.imgur.com/Co3dJPd.png)
 ![](http://i.imgur.com/T6L7D1S.png)
-![](http://i.imgur.com/oxg6Adw.png)
+![](http://i.imgur.com/86gs9Hu.png)
