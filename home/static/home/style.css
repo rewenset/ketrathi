@@ -1,14 +1,12 @@
 html {
-    height:100%;
-    font-family: 'David Libre', serif;
+    height: 100%;
 }
 
 body {
-    background-color:rgb(192,216,224);
     background: white url("images/background.png");
-    height:100% !important;
-    min-height:100%;
-    position:relative;
+    height: 100% !important;
+    min-height: 100%;
+    position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -20,6 +18,7 @@ body {
 
 .mainpage {
     max-width: 900px;
+    width: 900px;
     margin-top: 0;
     font-family: 'David Libre', serif;
     border-radius: 4px;
@@ -28,10 +27,9 @@ body {
     margin-right: auto;
 }
 
-
 .brandName {
     font-family: 'Orbitron', sans-serif;
-    color: rgb(93,87,107)
+    color: rgb(93, 87, 107)
 }
 
 .registration {

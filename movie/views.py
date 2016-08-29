@@ -11,6 +11,7 @@ from .forms import AddMovieForm
 class IndexView(generic.ListView):
     template_name = 'movie/index.html'
     context_object_name = 'all_movies'
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)

@@ -1,32 +1,32 @@
 html {
-    height:100%;
+    min-height: 100%;
 }
 
 body {
-    background-color:#f7f7f7;
     background: white url("images/background.png");
-    height:100% !important;
-    min-height:100%;
-    position:relative;
+    height: 100% !important;
+    min-height: 100vh;
+    position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .mainpage {
     max-width: 874px;
+    min-height: 95vh;
     margin-top: 0;
     font-family: 'David Libre', serif;
     border-radius: 4px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
 }
 
 .movieList {
-    height: 100%;
-    overflow-y: sroll;
-    margin-left: 13px;
-    background-color: white;
+    /*height: 100%;*/
+    /*min-height: 100%;*/
+    margin-left: 15px;
+    min-width: 100%;
 }
 
 .movieElement {
@@ -42,7 +42,7 @@ body {
 
 .movieElement:hover {
     background-color: #EEF4ED;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
@@ -53,7 +53,18 @@ body {
     padding: 5px;
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+}
+
+.addNewMovie {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar {
+    margin-bottom: 0;
 }
 
 .navbar-brand {
@@ -67,4 +78,25 @@ body {
 
 .brandName {
     font-family: 'Orbitron', sans-serif;
+}
+
+.paginationBlock {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.detailBlock {
+    background: white;
+    min-width: 100%;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 874px;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
