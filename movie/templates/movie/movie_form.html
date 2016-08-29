@@ -6,21 +6,23 @@
 
     <h4 style="margin-left:10px"><a href="{% url 'movie:index' %}">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back
-    </a> </h4>
+    </a></h4>
     <div style="background: white; padding:10px;">
-    <h2 style="text-align: center;"> Add New Movie Form</h2>
+        <h2 style="text-align: center;"> Add New Movie Form</h2>
+        {% include 'movie/includes/form_errors.html' %}
 
-    <form style="display: block; margin-left: 10%;" class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {% for field in form %}
-            <span> {{ field.errors }} </span>
-            <label>{{ field.label_tag }}</label>
-            <div>{{ field }}</div>
-        {% endfor %}
+        <form style="display: block; margin-left: 10%;" class="form-horizontal" action="" method="post"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <span> {{ field.errors }} </span>
+                <label>{{ field.label_tag }}</label>
+                <div>{{ field }}</div>
+            {% endfor %}
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
         <br>
-        <button type="submit">Submit</button>
-    </form>
-
-    <br>
     </div>
 {% endblock %}

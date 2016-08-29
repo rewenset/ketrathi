@@ -5,22 +5,19 @@
 {% block body %}
     <h4 style="margin-left:10px"><a href="{% url 'movie:index' %}">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back
-    </a> </h4>
+    </a></h4>
     <div class="row detailBlock">
-        <div class="col-md-4">
-        <img src="{{ movie.poster.url }}" style="width: 250px;">
-        </div>
+        <img src="{{ movie.poster.url }}" style="float: left; width:400px; margin: 20px;">
 
         <h2>{{ movie.original_title }}</h2>
         <h4>{{ movie.seen_for_the_first_time }}</h4>
+        <h4>IMDb: {{ movie.imdbRating }}/10</h4>
 
-        <p>
-            <form action="{% url 'movie:delete' movie.id %}" method="post" style="display: inline;">
-                {% csrf_token %}
-                <input type="hidden" name="movie_id" value="{{ movie.id }}"/>
-                <button class="btn btn-primary" type="submit"> delete</button>
-            </form>
-        </p>
+        <form action="{% url 'movie:delete' movie.id %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="hidden" name="movie_id" value="{{ movie.id }}"/>
+            <button class="btn btn-primary" type="submit"> delete</button>
+        </form>
 
     </div>
 {% endblock %}
